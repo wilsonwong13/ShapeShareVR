@@ -7,6 +7,7 @@
   <script src="aframe.js"></script>
   <script src="camera.js"></script>
   <script src="/socket.io/socket.io.js"></script>
+  <script src="https://rawgit.com/ngokevin/aframe-broadcast-component/master/dist/aframe-broadcast-component.min.js"></script>
   <style>   
     html, body, div, a-scene {
       background-color: transparent;
@@ -68,21 +69,19 @@
     </a-box>
 
     <a-sphere color="blue" radius="1000" position="-1000 1500 3000"></a-sphere>
+
+    <a-entity broadcast="send: geometry, material, position, rotation"
+          camera look-controls wasd-controls
+          geometry="primitive: box"
+          material="color: #222"
+          position="0 1.8 5"></a-entity>
   </a-scene>
 
 
 
   <video id="inputVideo" autoplay loop></video>
 
-  <div class="coords">
-  </div>
-  <script type="text/javascript"> 
-    var socket = io()
-    socket.on('testerEvent', function(data){ 
-      var stuff = document.getElementsByTagName('a-scene')
-      stuff.appendChild('<div></div>')
-    })
-  </script>
+  <div class="coords"></div>
 
   <script type="text/javascript">
 

@@ -1,14 +1,25 @@
-var server = require('http').createServer();
-var io = require('socket.io')(server);
+const express = require('express')
+const app = express()
+var server = app.listen(process.env.PORT)
+var socketio = require('socket.io')
+var io = socketio(server);
 
-var port = process.env.PORT || 12000;
-server.listen(port);
-console.log('Server started on port', port);
+app.use(express.static('public'))
 
-io.on('connection', function (socket) {
-  console.log('Connection received');
+app.get('/', function(req, res, next) {
+	res.sendFile(__dirname + '/public/index.html')
+});
 
-  socket.on('broadcast', function (data) {
+
+io.on('connection', function(socket) {
+	console.log('A user connected')
+
+	socket.on('broadcast', function (data) {
     socket.broadcast.emit('broadcast', data);
   });
-});
+
+	socket.on('disconnect', function() {
+		console.log('A user disconnect')
+	})
+})
+
