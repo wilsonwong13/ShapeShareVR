@@ -3,6 +3,8 @@ const app = express()
 var server = app.listen(process.env.PORT)
 var socketio = require('socket.io')
 var io = socketio(server);
+var aframe=require('aframe');
+var aframe-broadcast-component=require('aframe-broadcast-component');
 
 app.use(express.static('public'))
 
@@ -13,10 +15,6 @@ app.get('/', function(req, res, next) {
 
 io.on('connection', function(socket) {
 	console.log('A user connected')
-
-	socket.on('broadcast', function (data) {
-    socket.broadcast.emit('broadcast', data);
-  });
 
 	socket.on('disconnect', function() {
 		console.log('A user disconnect')
