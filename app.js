@@ -8,3 +8,17 @@ app.get('/', function(req, res, next) {
 });
 
 app.listen(process.env.PORT)
+
+
+var socketio = require('socket.io')
+
+
+var io = socketio(server);
+
+io.on('connection', function(socket) {
+	console.log('A user connected')
+
+	socket.on('disconnect', function() {
+		console.log('A user disconnect')
+	})
+})
