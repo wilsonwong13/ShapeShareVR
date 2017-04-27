@@ -7,6 +7,7 @@
   <script src="aframe.js"></script>
   <script src="camera.js"></script>
   <script src="/socket.io/socket.io.js"></script>
+  <script src=""></script>
   <script src="/aframe-broadcast-component/master/dist/aframe-broadcast-component.min.js"></script>
   <style>   
     html, body, div, a-scene {
@@ -37,7 +38,7 @@
   </style>   
 </head>
 <body>
-  <a-scene>
+  <a-scene broadcast="https://stackproject.herokuapp.com/">
 
     <a-camera position="0 1.8 500"> <a-cursor color="blue" /></a-camera>
 
