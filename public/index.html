@@ -76,11 +76,11 @@
 
   <div class="coords">
   </div>
-  <script> 
+  <script type="text/javascript"> 
     var socket = io()
     socket.on('testerEvent', function(data){ 
-      let dummy = '<div>' + data.description + '</div>'
-      document.body.appendChild(dummy)
+      var stuff = document.getElementsByTagName('a-scene')
+      stuff.appendChild('<div></div>')
     })
   </script>
 
