@@ -14,13 +14,11 @@ app.get('/', function(req, res, next) {
 io.on('connection', function(socket) {
 	console.log('A user connected')
 
-	setTimeout(function(){
-    socket.send('Sent a message 4seconds after connection!');
-  }, 4000);
-
+  setTimeout(function(){
+	  //Sending an object when emmiting an event
 	socket.emit('testerEvent', { description: 'A custom event named testerEvent!'});
 	}, 4000);
-	
+
 	socket.on('disconnect', function() {
 		console.log('A user disconnect')
 	})
