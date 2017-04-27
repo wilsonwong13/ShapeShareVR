@@ -67,7 +67,7 @@
               <a-animation attribute="rotation" begin="click" repeat="indefinite" to="0 360 0"></a-animation>
     </a-box>
 
-    <a-sphere color= "blue" radius="1000" position="-1000 1500 3000"></a-sphere>
+    <a-sphere color="blue" radius="1000" position="-1000 1500 3000"></a-sphere>
   </a-scene>
 
 
@@ -78,7 +78,7 @@
   </div>
   <script> 
     var socket = io()
-    socket.on('message', function(data){console.log(data)})
+    socket.on('testerEvent', function(data){document.write(data.description)})
   </script>
 
   <script type="text/javascript">
