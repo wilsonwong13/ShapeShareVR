@@ -6,6 +6,7 @@
   <meta name="description" content="Hello, World! • A-Frame">
   <script src="aframe.js"></script>
   <script src="camera.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
   <style>   
     html, body, div, a-scene {
       background-color: transparent;
@@ -73,8 +74,7 @@
 
   <div class="coords">
   </div>
-  
-  <script src="/socket.io/socket.io.js"></script>
+  <script> var socket = io()</script>
 
   <script type="text/javascript">
 
