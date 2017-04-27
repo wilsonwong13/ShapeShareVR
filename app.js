@@ -1,5 +1,6 @@
-const express = require('express')
-const app = express()
+var app = require('express')();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
 
 app.use(express.static('public'))
 
@@ -7,16 +8,17 @@ app.get('/', function(req, res, next) {
 	res.sendFile(__dirname + '/public/index.html')
 });
 
-var server = app.listen(process.env.PORT)
+//Whenever someone connects this gets executed
+io.on('connection', function(socket){
+  console.log('A user connected');
 
-var socketio = require('socket.io')
+  //Whenever someone disconnects this piece of code executed
+  socket.on('disconnect', function () {
+    console.log('A user disconnected');
+  });
 
-var io = socketio(server);
+});
 
-io.on('connection', function(socket) {
-	console.log('A user connected')
-
-	socket.on('disconnect', function() {
-		console.log('A user disconnect')
-	})
-})
+http.listen(3000, function(){
+  console.log('listening on *:3000');
+});
