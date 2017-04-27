@@ -36,7 +36,7 @@
   </style>   
 </head>
 <body>
-  <a-scene broadcast="https://stackproject.herokuapp.com/">
+  <a-scene>
 
     <a-camera position="0 1.8 500"> <a-cursor color="blue" /></a-camera>
 
@@ -68,19 +68,18 @@
     </a-box>
 
     <a-sphere color="blue" radius="1000" position="-1000 1500 3000"></a-sphere>
-
-    <a-entity broadcast="send: geometry, material, position, rotation"
-          camera look-controls wasd-controls
-          geometry="primitive: box"
-          material="color: #222"
-          position="0 1.8 5"></a-entity>
   </a-scene>
 
 
 
   <video id="inputVideo" autoplay loop></video>
 
-  <div class="coords"></div>
+  <div class="coords">
+  </div>
+  <script type="text/javascript"> 
+    var socket = io()
+    socket.on('message', function(data){console.log(data)});
+  </script>
 
   <script type="text/javascript">
 
