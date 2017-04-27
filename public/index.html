@@ -76,9 +76,14 @@
 
   <div class="coords">
   </div>
+
   <script type="text/javascript"> 
     var socket = io()
-    socket.on('message', function(data){console.log(data)});
+    socket.on('message', function(data){
+      var aScene = document.querySelectorAll("a-scene")
+      var newEnity = document.createElement("a-entity");
+      aScene.appendChild(newEnity)
+    });
   </script>
 
   <script type="text/javascript">
