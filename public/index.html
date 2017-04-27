@@ -78,7 +78,13 @@
   </div>
   <script type="text/javascript"> 
     var socket = io()
-    socket.on('testerEvent', function(data){document.write(data.description)})
+    socket.on('testerEvent', function(data){ 
+      let newDiv = document.createElement("div")
+      let newContent = data.description
+      newDiv.appendChild(newContent)
+      var stuff = document.getElementsByTagName('a-sphere')
+      document.body.insertBefore(newDiv, stuff)
+    })
   </script>
 
   <script type="text/javascript">
