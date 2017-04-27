@@ -42,13 +42,27 @@
     <a-assets>
       <a-asset-item id="ducky-obj" src="ducky.obj"></a-asset-item>
       <a-asset-item id="pokeball" src="pokeball-vray.obj"></a-asset-item>
-      <a-asset-item id="pokeball-material" src="pokeball-vray.mtl"></a-asset-item>
+      <a-asset-item id="pokeball-material" src="pokeball-vray.mtl"
     </a-assets>
-    
+
+    <a-obj-model
+      src="#ducky-obj"
+      position="0 1200 -3000"
+      rotation="-210 -120 180"
+      scale="8 8 8"
+      material="color: orange">
+    </a-obj-model>
+
+    <a-obj-model
+      src="#pokeball"
+      mtl="#pokeball-material"
+      position="1000 1200 -3000">
+    </a-obj-model>
+
     <a-box color="red" width="100" height="100" depth="100"
-              position="0 1200 -3000" rotation="45 45 45" scale="1 2.5 1">
+              position="-1000 1200 -3000" rotation="45 45 45" scale="1 2.5 1">
               <a-animation attribute="rotation" begin="click" repeat="indefinite" to="0 360 0"></a-animation>
-      </a-box>
+    </a-box>
 
   </a-scene>
 
