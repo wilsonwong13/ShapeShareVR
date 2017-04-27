@@ -67,7 +67,6 @@
               <a-animation attribute="rotation" begin="click" repeat="indefinite" to="0 360 0"></a-animation>
     </a-box>
 
-    <a-sphere color="blue" radius="1000" position="-1000 1500 3000"></a-sphere>
   </a-scene>
 
 
@@ -80,9 +79,13 @@
   <script type="text/javascript"> 
     var socket = io()
     socket.on('message', function(data){
-      var aScene = document.querySelectorAll("a-scene")
-      var newEnity = document.createElement("a-entity");
-      aScene.appendChild(newEnity)
+      var scene = document.querySelector('a-scene');
+      var cylinder = document.createElement('a-cylinder');
+      cylinder.setAttribute('color', '#FF9500');
+      cylinder.setAttribute('height', '1000');
+      cylinder.setAttribute('radius', '1000');
+      cylinder.setAttribute('position', '-1000 1500 3000');
+      scene.appendChild(cylinder);
     });
   </script>
 
