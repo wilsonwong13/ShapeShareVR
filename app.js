@@ -3,8 +3,6 @@ const app = express()
 var server = app.listen(process.env.PORT)
 var socketio = require('socket.io')
 var io = socketio(server);
-var aframe=require('aframe');
-var aframe-broadcast-component=require('aframe-broadcast-component');
 
 app.use(express.static('public'))
 
