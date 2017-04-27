@@ -7,7 +7,9 @@ app.get('/', function(req, res, next) {
 	res.sendFile(__dirname + '/public/index.html')
 });
 
-var server = app.listen(process.env.PORT)
+var server = app.listen(1337, function () {
+    console.log('The server is listening on port 1337!');
+});
 
 var socketio = require('socket.io')
 
