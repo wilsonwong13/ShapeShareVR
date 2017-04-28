@@ -7,6 +7,7 @@
   <script src="aframe.js"></script>
   <script src="camera.js"></script>
   <script src="/socket.io/socket.io.js"></script>
+  <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
   <style>   
     html, body, div, a-scene {
       background-color: transparent;
@@ -35,8 +36,8 @@
     }
   </style>   
 </head>
-<body>
-  <a-scene>
+<body style='margin : 0px; overflow: hidden;'>
+  <a-scene embedded artoolkit='sourceType: webcam;'>
 
     <a-camera position="0 1.8 500"> <a-cursor color="blue" /></a-camera>
 
@@ -68,6 +69,9 @@
     </a-box>
 
     <a-entity geometry="primitive: box" width="1000" height="1000" depth="1000" position="10000 1200 -3000" color="orange"></a-entity>
+
+    <a-box position='0 0.5 0' material='opacity: 0.5;'></a-box>
+    <a-marker-camera preset='hiro'></a-marker-camera>
   </a-scene>
 
 
