@@ -7,10 +7,10 @@ var io = socketio(server);
 app.use(express.static('public'))
 
 app.get('/', function(req, res, next) {
-	res.sendFile(__dirname + '/public/index.html')
+	res.sendFile(__dirname + '/public/switch.html')
 });
 
-app.get('/ar', function(req, res, next) {
+app.get('/ar2', function(req, res, next) {
 	res.sendFile(__dirname + '/public/aframeAR.html')
 });
 
@@ -18,8 +18,8 @@ app.get('/vr', function(req, res, next) {
 	res.sendFile(__dirname + '/public/vr.html')
 })
 
-app.get('/home', function(req, res, next) {
-	res.sendFile(__dirname + '/public/switch.html')
+app.get('/ar1', function(req, res, next) {
+	res.sendFile(__dirname + '/public/index.html')
 })
 
 io.on('connection', function(socket) {
