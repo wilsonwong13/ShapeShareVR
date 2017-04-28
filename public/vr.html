@@ -5,6 +5,7 @@
 </head>
 	<script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
 	<script src="/socket.io/socket.io.js"></script>
+	<script src="webserver.js"></script>
 	<style type="text/css">
 		.aframebox {
 			height: 500px;
@@ -18,10 +19,6 @@
 	<a-entity position="0 -1 0">
   	<a-camera></a-camera>
 	</a-entity>
-	<button>Howdy</button>
-	<script>
-		var socket = io()
-		socket.on('message', function(data) {console.log(data)})
-	</script>
+	<button type="button" onclick="test()">Howdy</button>
 </body>
 </html>

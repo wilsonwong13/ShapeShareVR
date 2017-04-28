@@ -75,6 +75,8 @@
       el.setAttribute("material", "color:#ff0; metalness:0.0; roughness:1.0;")
       document.querySelector('a-scene').appendChild(el);    
     });
+
+    socket.on('personalTest', function(data) {console.log(data)}
   </script>
 
   <script type="text/javascript">
