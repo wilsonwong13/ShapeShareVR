@@ -1,4 +1,4 @@
-var socket = io(window.location.origin);
+var socket = io();
 
 socket.on('personalTest', function(data){console.log(data)})
 socket.on('message', function(data) {console.log(data)})
