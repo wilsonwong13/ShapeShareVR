@@ -8,6 +8,7 @@
 	<script type="text/javascript">
 		function test() {
 			socket.emit('personalTest', {message: 'Howdy'})
+			console.log('howdy')
 		}
 	</script>
 	<style type="text/css">
@@ -24,10 +25,6 @@
   	<a-camera></a-camera>
 	</a-entity>
 	<button type="button" onclick="test()">Howdy</button>
-	<script>
-		var socket = io()
-		socket.on('message', function(data) {console.log(data)})
-		socket.on('personalTest', function(data){console.log(data)})
-	</script>
+	<script src="/webserver.js"></script>
 </body>
 </html>
