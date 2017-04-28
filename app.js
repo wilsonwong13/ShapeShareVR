@@ -17,6 +17,7 @@ io.on('connection', function(socket) {
 	setTimeout(function(){
     socket.send('Sent a message 4seconds after connection!');
   }, 4000);
+  
 	
 	socket.on('disconnect', function() {
 		console.log('A user disconnect')
