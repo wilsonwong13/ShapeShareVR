@@ -14,6 +14,9 @@ app.get('/ar', function(req, res, next) {
 	res.sendFile(__dirname + '/public/aframeAR.html')
 });
 
+app.get('/vr', function(req, res, next) {
+	res.sendFile(__dirname + '/public/vr.html')
+})
 
 io.on('connection', function(socket) {
 	console.log('A user connected')
