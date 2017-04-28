@@ -26,7 +26,11 @@ io.on('connection', function(socket) {
 	console.log('A user connected')
 
 	setTimeout(function(){
-    socket.send('Sent a message 4seconds after connection!');
+    socket.send({"geometry": "primitive: sphere; radius: 1000;",
+    	"position": "-10000 1200 -3000",
+    	"material": "color:#ff0; metalness:0.0; roughness:1.0;",
+    	"message":"new Object"
+    });
   }, 4000);
 
 	
