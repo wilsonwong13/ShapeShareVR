@@ -23,7 +23,7 @@
 		var socket = io()
 		socket.on('message', function(data) {console.log(data)})
 		function test() {
-			socket.broadcast.emit('message', ('description: Howdy'))
+			socket.emit('message', {'message: Howdy'})
 		}
 	</script>
 </body>
