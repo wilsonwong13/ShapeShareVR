@@ -18,6 +18,10 @@ app.get('/vr', function(req, res, next) {
 	res.sendFile(__dirname + '/public/vr.html')
 })
 
+app.get('/home', function(req, res, next) {
+	res.sendFile(__dirname + '/public/switch.html')
+})
+
 io.on('connection', function(socket) {
 	console.log('A user connected')
 
