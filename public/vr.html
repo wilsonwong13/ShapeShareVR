@@ -5,8 +5,11 @@
 </head>
 	<script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
 	<script src="/socket.io/socket.io.js"></script>
+	<style type="text/css">
+		a-scene { display: block; width: 50%; }
+	</style>
 <body>
-	<a-scene>
+	<a-scene embedded>
 		<a-box position="1 1 1" width="1" height="1" depth="1" color="blue"></a-box>
 	</a-scene>
 	<button>Howdy</button>
