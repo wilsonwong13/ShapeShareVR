@@ -36,8 +36,6 @@ io.on('connection', function(socket) {
 	socket.on('personalTest', function(data) {
 		sockect.broadcast.emit('newtext', data)
 	})
-
-
 		
 	socket.on('disconnect', function() {
 		console.log('A user disconnect')
