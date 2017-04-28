@@ -4,15 +4,12 @@
   <meta charset="utf-8">
   <title>Hello, World! • A-Frame</title>
   <meta name="description" content="Hello, World! • A-Frame">
+  <script src="aframe.js"></script>
   <script src="camera.js"></script>
   <script src="/socket.io/socket.io.js"></script>
-  <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
-  <script src="aframe-ar.js"></script>
   <style>   
     html, body, div, a-scene {
       background-color: transparent;
-      margin: 0px;
-      overflow: hidden;
     }
     video, img {
       width: 100%    !important;
@@ -41,7 +38,7 @@
 <body>
   <a-scene>
 
-    <a-camera position="0 1.8 500"></a-camera>
+    <a-camera position="0 1.8 500"> <a-cursor color="blue" /></a-camera>
 
     <a-assets>
       <a-asset-item id="ducky-obj" src="ducky.obj"></a-asset-item>
@@ -71,13 +68,6 @@
     </a-box>
     </a-entity>
   </a-scene>
-  
-  <a-scene embedded artoolkit='sourceType: webcam;'>
-    <a-box color="red" material='opacity: 0.5;'
-                position="0 0.5 0">
-      </a-box>
-       <a-marker-camera preset='hiro'></a-marker-camera>
-  </a-scene>
 
 
 
@@ -85,7 +75,7 @@
 
   <div class="coords">
   </div>
-<!-- 
+
   <script type="text/javascript"> 
     var socket = io()
     socket.on('message', function(data){
@@ -95,7 +85,7 @@
       el.setAttribute("material", "color:#ff0; metalness:0.0; roughness:1.0;")
       document.querySelector('a-scene').appendChild(el);    
     });
-  </script> -->
+  </script>
 
   <script type="text/javascript">
 

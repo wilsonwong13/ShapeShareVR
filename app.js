@@ -10,6 +10,10 @@ app.get('/', function(req, res, next) {
 	res.sendFile(__dirname + '/public/index.html')
 });
 
+app.get('/ar', function(req, res, next) {
+	res.sendFile(__dirname + '/public/aframeAR.html')
+});
+
 
 io.on('connection', function(socket) {
 	console.log('A user connected')
@@ -17,7 +21,7 @@ io.on('connection', function(socket) {
 	setTimeout(function(){
     socket.send('Sent a message 4seconds after connection!');
   }, 4000);
-  
+
 	
 	socket.on('disconnect', function() {
 		console.log('A user disconnect')
