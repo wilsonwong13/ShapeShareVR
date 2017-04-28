@@ -34,7 +34,7 @@ io.on('connection', function(socket) {
   }, 4000);
 
 	socket.on('personalTest', function(data) {
-		sockect.broadcast.emit('newtext', data)
+		socket.broadcast.emit('newtext', data)
 	})
 		
 	socket.on('disconnect', function() {
