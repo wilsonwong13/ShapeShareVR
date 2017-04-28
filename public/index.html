@@ -39,66 +39,10 @@
 </head>
 <body style='margin : 0px; overflow: hidden;'>
   <a-scene embedded artoolkit='sourceType: webcam;'>
-
-    <a-camera position="0 1.8 500"> <a-cursor color="blue" /></a-camera>
-
-    <a-assets>
-      <a-asset-item id="ducky-obj" src="ducky.obj"></a-asset-item>
-      <a-asset-item id="pokeball" src="pokeball-vray.obj"></a-asset-item>
-      <a-asset-item id="pokeball-material" src="pokeball-vray.mtl"></a-asset-item>
-    </a-assets>
-
-    <a-obj-model
-      src="#ducky-obj"
-      position="0 1200 -3000"
-      rotation="-210 -120 180"
-      scale="8 8 8"
-      material="color: orange">
-      <a-animation attribute="rotation" begin="click" repeat="indefinite" to="0 360 0"></a-animation>
-    </a-obj-model>
-
-    <a-obj-model
-      src="#pokeball"
-      mtl="#pokeball-material"
-      position="1000 1200 -3000">
-      <a-animation attribute="rotation" begin="click" repeat="indefinite" to="0 360 0"></a-animation>
-    </a-obj-model>
-
-    <a-box position='10000 1200 -3000' material='opacity: 0.5;' width="1000" height="1000" depth="1000"></a-box>
+    <a-box position='0 0.5 0' material='opacity: 0.5;'></a-box>
     <a-marker-camera preset='hiro'></a-marker-camera>
   </a-scene>
-
-
-
-  <video id="inputVideo" autoplay loop></video>
-
-  <div class="coords">
-  </div>
-
-  <script type="text/javascript"> 
-    var socket = io()
-    socket.on('message', function(data){
-      var el = document.createElement('a-entity');
-      el.setAttribute("geometry", "primitive: sphere; radius: 1000;")
-      el.setAttribute("position", "-10000 1200 -3000")
-      el.setAttribute("material", "color:#ff0; metalness:0.0; roughness:1.0;")
-      document.querySelector('a-scene').appendChild(el);    
-    });
-  </script>
-
-  <script type="text/javascript">
-
-    var vid = document.querySelector('#inputVideo');
-
-    cameraSource.start({
-      videoElement: vid,
-      callback: function() {
-        console.log('videoooo')
-      }
-    });
-    
-  </script>
-
 </body>
+
 </html>
 
