@@ -7,7 +7,7 @@ var io = socketio(server);
 app.use(express.static('public'))
 
 app.get('/', function(req, res, next) {
-	res.sendFile(__dirname + '/public/switch.html')
+	res.sendFile(__dirname + '/public/index.html')
 });
 
 app.get('/ar2', function(req, res, next) {
@@ -19,7 +19,7 @@ app.get('/vr', function(req, res, next) {
 })
 
 app.get('/ar1', function(req, res, next) {
-	res.sendFile(__dirname + '/public/index.html')
+	res.sendFile(__dirname + '/public/ar1.html')
 })
 
 io.on('connection', function(socket) {
