@@ -24,24 +24,19 @@
 			}
 
 			function propteryForLine(arr) {
-				let results = ''  
+				let results = 'lineWidth: 20; path: '  
 			  arr.forEach(function(element){
-			    results = results + element.x/100 +' ' + -element.y/100 + ' ' + '0, '
+			    results = results + element.x/100 +' ' + element.y/100 + ' ' + '0, '
 			  })
-			  return results
+			  return results + '; color: #E20049'
 			}
 
 			socket.on('toVRDrawing', function(data){
 				let entity = document.createElement('a-entity')
 				let results = propteryForLine(data)
 				console.log(results)
-				entity.setAttribute("tube", {
-					path: data
-					radius: "0.5"
-				})
-				// entity.setAttribute("path", results)
-				// entity.setAttribute("radius", "0.5")
-				// entity.setAttribute("material", "color: red")
+				entity.setAttribute("meshline", results)
+				entity.setAttribute("color", "black")
 				document.querySelector('a-scene').appendChild(entity)
 			})
 
