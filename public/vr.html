@@ -36,6 +36,8 @@
 				let results = propteryForLine(data)
 				console.log(results)
 				entity.setAttribute("meshline", results)
+
+				entity.setAttribute("dummy", 'hoyw')
 				document.querySelector('a-scene').appendChild(entity)
 			})
 
