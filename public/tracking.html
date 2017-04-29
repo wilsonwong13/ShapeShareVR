@@ -61,6 +61,7 @@
       var drawSegments = [[]];
       var segment = 0;
 
+      var database = [[]]
       tracking.ColorTracker.registerColor('green', function (r, g, b) {
         if( r < 58 && g > 100 && b < 50) {
           return true;
@@ -93,6 +94,7 @@
 
       function draw(rect) {
         drawSegments[segment].push(rect.x + rect.width / 2, rect.y + rect.height / 2);
+        database[segment].push(rect.x + rect.width / 2, rect.y + rect.height / 2)
       }
 
       function erase(rect) {
@@ -111,7 +113,7 @@
 
           drawSegments = [drawSegments[drawSegments.length - 1]];
           segment = 0;
-          console.log(drawSegments)
+          console.log(database)
           requestAnimationFrame(loop);
       }());
     };
