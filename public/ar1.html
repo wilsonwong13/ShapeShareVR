@@ -68,7 +68,7 @@
 
   <script type="text/javascript"> 
     var socket = io()
-    socket.on('message', function(data){
+    socket.on('geometry', function(data){
       var el = document.createElement('a-entity');
       el.setAttribute("geometry", "primitive: sphere; radius: 1000;")
       el.setAttribute("position", "-10000 1200 -3000")

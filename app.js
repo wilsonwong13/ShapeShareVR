@@ -32,9 +32,12 @@ io.on('connection', function(socket) {
  //    	"message":"new Object"
  //    });
  //  }, 4000);
+ //  
 
-	socket.on('personalTest', function(data) {
-		socket.broadcast.emit('newtext', data)
+
+
+	socket.on('newShape', function(data) {
+		socket.broadcast.emit('geometry', data)
 	})
 		
 	socket.on('disconnect', function() {
