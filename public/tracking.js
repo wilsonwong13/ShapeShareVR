@@ -2230,7 +2230,7 @@
   // Default colors
   //===================
 
-  tracking.ColorTracker.registerColor('green', function(r, g, b) {
+  tracking.ColorTracker.registerColor('cyan', function(r, g, b) {
     var thresholdGreen = 50,
       thresholdBlue = 70,
       dx = r - 0,
