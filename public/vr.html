@@ -24,10 +24,20 @@
 			}
 
 			socket.on('toVRDrawing', function(data){
-				let entity = document.createElement('a-tube')
-				console.log(data)
-
+				let entity = document.createElement('a-entity')
+				let path = dummy(data)
+				console.log('this is your path',path)
+				entity.setAttribute('tube' : `path: ${path}`)
+				document.querySelector('a-scene').appendChild(entity)
 			})
+			
+			function dummy (arr) {
+				let results = ''
+				arr.forEach(function(element) {
+					results = results + element.x + ' ' + element.y + ' ' + '0, '
+				})
+				return results
+			}
 
 
 	</script>
