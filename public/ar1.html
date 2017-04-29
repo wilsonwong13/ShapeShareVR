@@ -68,15 +68,23 @@
 
   <script type="text/javascript"> 
     var socket = io()
-    socket.on('message', function(data){
-      var el = document.createElement('a-entity');
-      el.setAttribute("geometry", "primitive: sphere; radius: 1000;")
-      el.setAttribute("position", "-10000 1200 -3000")
-      el.setAttribute("material", "color:#ff0; metalness:0.0; roughness:1.0;")
-      document.querySelector('a-scene').appendChild(el);    
-    });
+    // socket.on('message', function(data){
+    //   var el = document.createElement('a-entity');
+    //   el.setAttribute("geometry", "primitive: sphere; radius: 1000;")
+    //   el.setAttribute("position", "-10000 1200 -3000")
+    //   el.setAttribute("material", "color:#ff0; metalness:0.0; roughness:1.0;")
+    //   document.querySelector('a-scene').appendChild(el);    
+    // });
 
     socket.on('newtext', function(data) {console.log(data)});
+
+    socket.on('newShape', function(data){
+      let entity = document.createElement('a-entity');
+      entity.setAttribute("geometry", data.geometry);
+      entity.setAttribute("position", data.position);
+      entity.setAttribute("material", data.material);
+      document.querySelector('a-scene').appendChild(entity)
+    })
   </script>
 
   <script type="text/javascript">

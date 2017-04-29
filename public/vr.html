@@ -10,6 +10,14 @@
 			function test() {
 				socket.emit('personalTest','this is a test')
 			}
+
+			function createBox() {
+				socket.emit('newShape', {"geometry": "primitive: sphere; radius: 1000;",
+    	"position": "-10000 1200 -3000",
+    	"material": "color:#ff0; metalness:0.0; roughness:1.0;",
+    	"message":"new Object"
+    		})
+			}
 	</script>
 	<style type="text/css">
 		.aframebox {
@@ -25,5 +33,6 @@
   	<a-camera></a-camera>
 	</a-entity>
 	<button type="button" onclick="test()">Howdy</button>
+	<button type="button" onclick="test()">Create a box</button>
 </body>
 </html>
