@@ -22,6 +22,11 @@
 			function goToAr2() {
 				socket.emit("ar2", "This is ar2")
 			}
+
+			socket.on('sendingDrawing', function(data){
+				console.log(data)
+			})
+
 	</script>
 	<style type="text/css">
 		.aframebox {

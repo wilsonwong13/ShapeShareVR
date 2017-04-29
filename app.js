@@ -27,7 +27,7 @@ app.get('/drawingVR', function(req, res, next) {
 })
 
 app.get('/drawingAR', function(req, res, next) {
-	res.sendFile(__dirname + '/public/tracking.html')
+	res.sendFile(__dirname + '/public/drawingAR.html')
 })
 
 io.on('connection', function(socket) {
@@ -51,6 +51,10 @@ io.on('connection', function(socket) {
 
 	socket.on('ar2', function(data) {
 		socket.broadcast.emit('toAr2', data)
+	})
+
+	socket.on('sendingDrawing', function(data) {
+		socket.broadcast.emit('toVRDrawing', data)
 	})
 
 	socket.on('disconnect', function() {
