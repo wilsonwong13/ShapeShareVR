@@ -96,7 +96,9 @@
 
       function draw(rect) {
         drawSegments[segment].push(rect.x + rect.width / 2, rect.y + rect.height / 2);
-        database.push({'x' : rect.x + rect.width / 2, 'y' : rect.y + rect.height / 2})
+        if(segment % 2 === 0) {
+          database.push({'x' : rect.x + rect.width / 2, 'y' : rect.y + rect.height / 2})
+        }
       }
 
       function erase(rect) {
