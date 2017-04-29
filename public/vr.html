@@ -5,6 +5,7 @@
 </head>
 	<script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
 	<script src="/socket.io/socket.io.js"></script>
+	<script src="https://rawgit.com/andreasplesch/aframe-meshline-component/master/dist/aframe-meshline-component.min.js"></script>
 	<script type="text/javascript">
 		var socket = io();
 			function test() {
@@ -19,7 +20,7 @@
 			}
 
 			function goToAr2() {
-				socket.emit("ar2", "This is ar2")
+				socket.emit("ar2", "This is ar2")c
 			}
 	</script>
 	<style type="text/css">
@@ -35,6 +36,7 @@
 	<a-entity position="0 -1 0">
   	<a-camera></a-camera>
 	</a-entity>
+	<a-entity meshline="lineWidth: 20; path: -2 -1 0, 0 -2 0, 2 -1; color: #E20049"></a-entity>
 	<button type="button" onclick="test()">Howdy</button>
 	<button type="button" onclick="createBox()">Create a box</button>
 	<button type="button" onclick="goToAr2()">Ar2</button>
