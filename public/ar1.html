@@ -79,6 +79,7 @@
     socket.on('newtext', function(data) {console.log(data)});
 
     socket.on('newShape', function(data){
+      console.log(data)
       let entity = document.createElement('a-entity');
       entity.setAttribute("geometry", data.geometry);
       entity.setAttribute("position", data.position);
