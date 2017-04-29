@@ -4,7 +4,6 @@
 	<title>Hello, World! A-Frame VR World!</title>
 </head>
 	<script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
-	<script src="https://rawgit.com/andreasplesch/aframe-meshline-component/master/dist/aframe-meshline-component.min.js"></script>
 	<script src="/socket.io/socket.io.js"></script>
 	<script type="text/javascript">
 		var socket = io();
@@ -23,22 +22,12 @@
 				socket.emit("ar2", "This is ar2")
 			}
 
-			function propteryForLine(arr) {
-				let results = 'lineWidth: 20; path: '  
-			  arr.forEach(function(element){
-			    results = results + element.x/100 +' ' + element.y/100 + ' ' + '0, '
-			  })
-			  return results + '; color: #E20049'
-			}
-
 			socket.on('toVRDrawing', function(data){
 				let entity = document.createElement('a-entity')
-				let results = propteryForLine(data)
-				console.log(results)
-				entity.setAttribute("meshline", results)
-				entity.setAttribute("color", "black")
-				document.querySelector('a-scene').appendChild(entity)
+				console.log(data)
+
 			})
+			
 
 	</script>
 	<style type="text/css">
