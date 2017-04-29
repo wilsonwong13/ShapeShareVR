@@ -25,19 +25,16 @@ app.get('/ar1', function(req, res, next) {
 io.on('connection', function(socket) {
 	console.log('A user connected')
 
-	// setTimeout(function(){
- //    socket.send({"geometry": "primitive: sphere; radius: 1000;",
- //    	"position": "-10000 1200 -3000",
- //    	"material": "color:#ff0; metalness:0.0; roughness:1.0;",
- //    	"message":"new Object"
- //    });
- //  }, 4000);
- //  
+	setTimeout(function(){
+    socket.send({"geometry": "primitive: sphere; radius: 1000;",
+    	"position": "-10000 1200 -3000",
+    	"material": "color:#ff0; metalness:0.0; roughness:1.0;",
+    	"message":"new Object"
+    });
+  }, 4000);
 
-
-
-	socket.on('newShape', function(data) {
-		socket.broadcast.emit('geometry', data)
+	socket.on('personalTest', function(data) {
+		socket.broadcast.emit('newtext', data)
 	})
 		
 	socket.on('disconnect', function() {
