@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome to My App</title>
+	<script src="https://rawgit.com/aframevr/aframe/master/dist/aframe-master.min.js"></script>
+  <script src="https://unpkg.com/aframe-curve-component/dist/aframe-curve-component.min.js"></script>
+</head>
+<body>
+  <a-scene>
+    <a-curve id="track1">
+        <a-curve-point position="-1 1 -3"></a-curve-point>
+        <a-curve-point position="1 1 -3"></a-curve-point>
+    </a-curve>
+    
+    <!-- Draw the Curve -->
+    <a-draw-curve curveref="#track1" material="shader: line; color: blue;"></a-draw-curve>
+    
+    <!-- Clone a Box along the Curve -->
+    <a-entity clone-along-curve="curve: #track1; spacing: 0.2; scale: 1 1 1; rotation: 0 0 0;" geometry="primitive:box; height:0.1; width:0.2; depth:0.1"></a-entity>
+  </a-scene>
+</body>
+</html>
