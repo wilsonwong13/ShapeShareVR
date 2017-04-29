@@ -97,7 +97,7 @@
       function draw(rect) {
         drawSegments[segment].push(rect.x + rect.width / 2, rect.y + rect.height / 2);
         database[segment].push(counter+'x' + rect.x + rect.width / 2, counter+'y' + rect.y + rect.height / 2)
-        counter = ++;
+        counter++;
       }
 
       function erase(rect) {
