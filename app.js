@@ -22,6 +22,10 @@ app.get('/ar1', function(req, res, next) {
 	res.sendFile(__dirname + '/public/ar1.html')
 })
 
+app.get('/drawingVR', function(req, res, next) {
+	res.sendFile(__dirname + '/public/drawingVR.html')
+})
+
 io.on('connection', function(socket) {
 	console.log('A user connected')
 
