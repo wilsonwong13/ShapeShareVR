@@ -36,7 +36,10 @@
 				let entity = document.createElement('a-entity')
 				let results = propteryForLine(data)
 				console.log(results)
-				entity.setAttribute("tube", {})
+				entity.setAttribute("tube", {
+					path: data
+					radius: "0.5"
+				})
 				// entity.setAttribute("path", results)
 				// entity.setAttribute("radius", "0.5")
 				// entity.setAttribute("material", "color: red")
