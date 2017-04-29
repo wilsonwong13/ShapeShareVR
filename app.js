@@ -26,6 +26,10 @@ app.get('/drawingVR', function(req, res, next) {
 	res.sendFile(__dirname + '/public/drawingVR.html')
 })
 
+app.get('/drawingAR', function(req, res, next) {
+	res.sendFile(__dirname + '/public/tracking.html')
+})
+
 io.on('connection', function(socket) {
 	console.log('A user connected')
 
