@@ -23,8 +23,20 @@
 				socket.emit("ar2", "This is ar2")
 			}
 
+			function propteryForLine(arr) {
+				let results = 'lineWidth: 20; path: '  
+			  arr.forEach(function(element){
+			    results = results + element.x +' ' + element.y + ' ' + '0, '
+			  })
+			  return results + ';'
+			}
+
 			socket.on('toVRDrawing', function(data){
-				console.log(data)
+				let entity = document.createElement('a-entity')
+				let results = propteryForLine(data)
+				entity.setAttribute("meshline", results)
+				entity.setAttribute("color", "black")
+				document.querySelector('a-scene').appendChild(entity)
 			})
 
 	</script>
