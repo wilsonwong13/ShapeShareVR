@@ -26,7 +26,7 @@
 			function propteryForLine(arr) {
 				let results = 'lineWidth: 20; path: '  
 			  arr.forEach(function(element){
-			    results = results + element.x/100 +' ' + element.y/100 + ' ' + '0, '
+			    results = results + element.x/100 +' ' + -element.y/100 + ' ' + '0, '
 			  })
 			  return results + '; color: #E20049'
 			}
