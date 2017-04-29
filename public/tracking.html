@@ -61,6 +61,8 @@
       var drawSegments = [[]];
       var segment = 0;
 
+      var counter = 1;
+
       var database = [[]]
       tracking.ColorTracker.registerColor('green', function (r, g, b) {
         if( r < 58 && g > 100 && b < 50) {
@@ -94,7 +96,8 @@
 
       function draw(rect) {
         drawSegments[segment].push(rect.x + rect.width / 2, rect.y + rect.height / 2);
-        database[segment].push('x' + rect.x + rect.width / 2,'y' + rect.y + rect.height / 2)
+        database[segment].push(counter+'x' + rect.x + rect.width / 2, counter+'y' + rect.y + rect.height / 2)
+        counter = ++;
       }
 
       function erase(rect) {
