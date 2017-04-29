@@ -86,6 +86,11 @@
       entity.setAttribute("material", data.material);
       document.querySelector('a-scene').appendChild(entity)
     })
+
+    socket.on('toAr2', function(data) {
+      location.href = "https://stackproject.herokuapp.com/ar2"
+      console.log(data)
+    })
   </script>
 
   <script type="text/javascript">

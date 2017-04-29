@@ -17,6 +17,10 @@
     	material:"color:#ff0; metalness:0.0; roughness:1.0;",
     	message:"new Object"})
 			}
+
+			function goToAr2() {
+				socket.emit("ar2", "This is ar2")
+			}
 	</script>
 	<style type="text/css">
 		.aframebox {
@@ -33,5 +37,6 @@
 	</a-entity>
 	<button type="button" onclick="test()">Howdy</button>
 	<button type="button" onclick="createBox()">Create a box</button>
+	<button type="button" onclick="goToAr2()">Ar2</button>
 </body>
 </html>

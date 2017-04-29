@@ -41,6 +41,10 @@ io.on('connection', function(socket) {
 		socket.broadcast.emit('newShape', data)
 	})	
 
+	socket.on('ar2', function(data) {
+		socket.broadcast.emit('toAr2', data)
+	})
+
 	socket.on('disconnect', function() {
 		console.log('A user disconnect')
 	})
