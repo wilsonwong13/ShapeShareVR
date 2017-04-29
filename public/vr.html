@@ -32,11 +32,11 @@
 <body>
 	<a-scene class="aframebox" embedded>
 		<a-box position="0 2 0" width="1" height="1" depth="1" color="blue"></a-box>
+		<a-entity meshline="lineWidth: 20; path: -2 -1 0, 0 -2 0, 2 -1; color: #E20049"></a-entity>
 	</a-scene>
 	<a-entity position="0 -1 0">
   	<a-camera></a-camera>
 	</a-entity>
-	<a-entity meshline="lineWidth: 20; path: -2 -1 0, 0 -2 0, 2 -1; color: #E20049"></a-entity>
 	<button type="button" onclick="test()">Howdy</button>
 	<button type="button" onclick="createBox()">Create a box</button>
 	<button type="button" onclick="goToAr2()">Ar2</button>
