@@ -107,12 +107,11 @@
       (function loop() {
           for (var i = 0, len = drawSegments.length; i < len; i++) {
               drawSpline(context, drawSegments[i], 0.5, false);
-              console.log(drawSegments)
           }
 
           drawSegments = [drawSegments[drawSegments.length - 1]];
           segment = 0;
-
+          console.log(drawSegments)
           requestAnimationFrame(loop);
       }());
     };
