@@ -24,7 +24,7 @@
 			}
 
 			socket.on('toVRDrawing', function(data){
-				let entity = document.createElement('a-entity')
+				let entity = document.createElement('a-tube')
 				console.log(data)
 
 			})
@@ -40,6 +40,7 @@
 <body>
 	<a-scene class="aframebox" embedded>
 		<a-box position="0 2 0" width="1" height="1" depth="1" color="blue"></a-box>
+		<a-tube path="5 0 5, 5 0 -5, -5 0 -5" radius="0.5" material="color: red"></a-tube>
 	</a-scene>
 	<a-entity position="0 -1 0">
   	<a-camera></a-camera>
