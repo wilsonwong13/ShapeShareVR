@@ -9,13 +9,6 @@
   <script src="splines.min.js"></script>
   <script src="stats.min.js"></script>
   <script src="/socket.io/socket.io.js"></script>
-  <script type="text/javascript">
-    var socket = io ();
-      function sendDrawing() {
-        console.log('this is your data', database)
-        socket.emit('sendingDrawing', database)
-      }
-  </script>
   <style>
     #canvas,
     #video {
@@ -118,6 +111,12 @@
             rect.y <= y && y <= rect.y + rect.height;
       }
 
+      var socket = io ();
+      function sendDrawing() {
+        console.log('this is your data', database)
+        socket.emit('sendingDrawing', database)
+      }
+      
       (function loop() {
           for (var i = 0, len = drawSegments.length; i < len; i++) {
               drawSpline(context, drawSegments[i], 0.5, false);
