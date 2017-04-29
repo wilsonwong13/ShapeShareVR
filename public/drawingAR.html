@@ -111,12 +111,6 @@
             rect.y <= y && y <= rect.y + rect.height;
       }
 
-      var socket = io ();
-      function sendDrawing() {
-        console.log('this is your data', database)
-        socket.emit('sendingDrawing', database)
-      }
-      
       (function loop() {
           for (var i = 0, len = drawSegments.length; i < len; i++) {
               drawSpline(context, drawSegments[i], 0.5, false);
@@ -124,8 +118,14 @@
 
           drawSegments = [drawSegments[drawSegments.length - 1]];
           segment = 0;
-          requestAnimationFrame(loop);
-      }());
+          requestAnimationFrame(loop);          
+      } 
+        var socket = io ();
+        function sendDrawing() {
+        console.log('this is your data', database)
+        socket.emit('sendingDrawing', database)
+      }
+      ());
     };
   </script>
 
