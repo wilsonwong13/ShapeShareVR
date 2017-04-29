@@ -38,7 +38,7 @@ io.on('connection', function(socket) {
 	})
 	
 	socket.on('newShape', function(data) {
-		socket.broadcast.emit('newShape')
+		socket.broadcast.emit('newShape', data)
 	})	
 
 	socket.on('disconnect', function() {
