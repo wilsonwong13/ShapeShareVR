@@ -3,10 +3,10 @@
 <head>
 	<title>Hello, World! A-Frame VR World!</title>
 </head>
-	<script src="aframe-extras.primitives.js"></script>
 	<script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
 	<script src="https://rawgit.com/andreasplesch/aframe-meshline-component/master/dist/aframe-meshline-component.min.js"></script>
 	<script src="/socket.io/socket.io.js"></script>
+	<script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.6.0/dist/aframe-extras.min.js"></script>
 	<script type="text/javascript">
 		var socket = io();
 			function test() {
@@ -36,10 +36,10 @@
 				let entity = document.createElement('a-entity')
 				let results = propteryForLine(data)
 				console.log(results)
-				entity.setAttribute("primitive", 'tube')
-				entity.setAttribute("path", results)
-				entity.setAttribute("radius", "0.5")
-				entity.setAttribute("material", "color: red")
+				entity.setAttribute("tube", {})
+				// entity.setAttribute("path", results)
+				// entity.setAttribute("radius", "0.5")
+				// entity.setAttribute("material", "color: red")
 				document.querySelector('a-scene').appendChild(entity)
 			})
 
