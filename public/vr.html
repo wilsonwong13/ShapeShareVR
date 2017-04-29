@@ -27,8 +27,8 @@
 				let entity = document.createElement('a-entity')
 				let newPath = dummy(data)
 				console.log('this is your path',newPath)
-				// entity.setAttribute("tube", {`path: ${newPath}`})
-				// document.querySelector('a-scene').appendChild(entity)
+				entity.setAttribute("tube", {})
+				document.querySelector('a-scene').appendChild(entity)
 			})
 
 			function dummy (arr) {
