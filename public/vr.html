@@ -8,6 +8,7 @@
 	<script src="/socket.io/socket.io.js"></script>
 	<script type="text/javascript">
 		var socket = io();
+		var queueStack = []
 			function test() {
 				socket.emit('personalTest','this is a test')
 			}
@@ -24,14 +25,31 @@
 			}
 
 			socket.on('toVRDrawing', function(data){
-				let entity = document.createElement('a-entity')
 				let newPath = dummy(data)
-				console.log('this is your path',newPath.slice(0, -1))
-				// console.log( typeof newPath)
-				// console.log(newPath)
-				entity.setAttribute("tube", {"path": newPath.slice(0, -1)})
-				document.querySelector('a-scene').appendChild(entity)
+				newPath = newPath.slice(0, -1)
+				console.log('this is newPath', newPath)
+				stringIntoQues(newPath)
+				console.log('this is your que', queueStack)
+				queueStack.forEach(function(element) {
+					creatingObjects(element)
+				})
+				queueStack = []
 			})
+
+			function stringIntoQues(string) {
+				let splitString = string.split(',')
+			  while(splitString.length > 50) {
+			    let placeholder = splitString.slice(0, 50)
+			    queueStack.push(placeholder.join(','))
+			    splitString = splitString.slice(50)
+			  }
+			  queueStack.push(splitString.join(','))
+			}
+			function creatingObjects(string) {
+				let entity = document.createElement('a-entity')
+				entity.setAttribute("tube", {"path": string})
+				document.querySelector('a-scene').appendChild(entity)
+			}
 
 			function dummy (arr) {
 				let results = ''
