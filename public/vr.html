@@ -59,7 +59,9 @@
 				return results
 			}
 
-
+			function drawAR() {
+				socket.emit("drawAr", "This is drawAr")
+			}
 	</script>
 	<style type="text/css">
 		.aframebox {
@@ -78,5 +80,6 @@
 	<button type="button" onclick="test()">Howdy</button>
 	<button type="button" onclick="createBox()">Create a box</button>
 	<button type="button" onclick="goToAr2()">Ar2</button>
+	<button type="button" onclick="drawAR()">Give me a object</button>
 </body>
 </html>

@@ -57,6 +57,10 @@ io.on('connection', function(socket) {
 		socket.broadcast.emit('toVRDrawing', data)
 	})
 
+	socket.on('drawAr', function(data) {
+		socket.broadcast.emit('goTodrawAr', data)
+	})
+
 	socket.on('disconnect', function() {
 		console.log('A user disconnect')
 	})
