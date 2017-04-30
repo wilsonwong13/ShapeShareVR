@@ -170,7 +170,7 @@ var Component = module.exports.Component = {
   schema: {
     path:           {default: []},
     segments:       {default: 64},
-    radius:         {default: 1},
+    radius:         {default: .25},
     radialSegments: {default: 8},
     closed:         {default: false}
   },
