@@ -69,6 +69,31 @@
 				let dataColor = document.getElementById("colorSelect")
 				let colorValue = dataColor.options[dataColor.selectedIndex].value
 				console.log('This is your value', {'shape': shapeValue, 'color': colorValue})
+				if(shapeValue === 'sphere') {
+					socket.emit('newShape',{geometry: "primitive: sphere; radius: 1000;",
+		    	position:"0 1200 -3000",
+		    	material:`color:${colorValue}; metalness:0.0; roughness:1.0;`,
+		    	message:"new Object"})
+				} else if  (shapeValue === 'box') {
+					socket.emit('newShape',{geometry: "primitive: box;",
+		    	position:"0 1200 -3000",
+		    	material:`color:${colorValue}; metalness:0.0; roughness:1.0;`,
+		    	message:"new Object"})
+				} else if (shapeValue === 'cone') {
+					socket.emit('newShape',{geometry: "primitive: cone;",
+		    	position:"0 1200 -3000",
+		    	material:`color:${colorValue}; metalness:0.0; roughness:1.0;`,
+		    	message:"new Object"})
+				} else if (shapeValue === 'torus-knot') {
+					socket.emit('newShape',{geometry: "primitive: torus-knot;",
+		    	position:"0 1200 -3000",
+		    	material:`color:${colorValue}; metalness:0.0; roughness:1.0;`,
+		    	message:"new Object"})
+				}
+				let entity = document.createElement('a-entity');
+				entity.setAttribute("geometry", `primitive: ${shapeValue};`)
+				entity.setAttribute("position", '0 2 -1.877')
+				document.querySelector('a-scene').appendChild(entity)
 			}
 	</script>
 	<style type="text/css">
@@ -79,12 +104,9 @@
 	</style>
 <body>
 	<a-scene class="aframebox" embedded>
-		<a-box position="0 2 0" width="1" height="1" depth="1" color="blue"></a-box>
-		<a-tube path="5 0 5, 5 0 -5, -5 0 -5" radius="0.5" material="color: red"></a-tube>
+<!-- 		<a-box position="0 2 0" width="1" height="1" depth="1" color="blue"></a-box>
+		<a-tube path="5 0 5, 5 0 -5, -5 0 -5" radius="0.5" material="color: red"></a-tube> -->
 	</a-scene>
-	<a-entity position="0 -1 0">
-  	<a-camera></a-camera>
-	</a-entity>
 	<div>
 		<h3>Please Select a Shape</h3>
 			<p>Shape</p>
