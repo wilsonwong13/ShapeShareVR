@@ -12,7 +12,7 @@
 	</a-scene>
 	<script>
 		var socket = io()
-		var products = false 
+		var newObject = false 
 		socket.on('newtext', function(data) {console.log(data)})
 
 		socket.on('goTodrawAr', function(data) {
@@ -21,14 +21,19 @@
     })
 
      socket.on('newShapeAr2', function(data) {
-
-      console.log('this is your object',data)
-      let entity = document.createElement('a-entity');
-      entity.setAttribute("geometry", data.geometry);
-      entity.setAttribute("position", data.position);
-      entity.setAttribute("material", data.material);
-      entity.setAttribute('id', 'newObject')
-      document.querySelector('a-scene').appendChild(entity)
+     		if(newObject) {
+     			let oldObject = document.getElementById('newObject')
+     			let scene = document.getElementsByTagName('a-scene')
+     			scene[0].removeChild(newObject)
+     		}
+	      console.log('this is your object',data)
+	      let entity = document.createElement('a-entity');
+	      entity.setAttribute("geometry", data.geometry);
+	      entity.setAttribute("position", data.position);
+	      entity.setAttribute("material", data.material);
+	      entity.setAttribute('id', 'newObject')
+	      document.querySelector('a-scene').appendChild(entity)
+	      newObject = true
     })
 	</script>
 </body>
