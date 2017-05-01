@@ -92,6 +92,7 @@
 				}
 				let entity = document.createElement('a-entity');
 				entity.setAttribute("geometry", `primitive: ${shapeValue};`)
+				entity,setAttribute("material", `color: ${colorValue}`)
 				entity.setAttribute("position", '0 2 -1.877')
 				document.querySelector('a-scene').appendChild(entity)
 			}
