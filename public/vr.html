@@ -67,8 +67,8 @@
 				let dataShape = document.getElementById("shapeSelect")
 				let shapeValue = dataShape.options[dataShape.selectedIndex].value
 				let dataColor = document.getElementById("colorSelect")
-				let colorValue = dataShape.options[dataShape.selectedIndex].value
-				console.log('This is your value', {'shape': dataShape, 'color': colorValue})
+				let colorValue = dataColor.options[dataColor.selectedIndex].value
+				console.log('This is your value', {'shape': shapeValue, 'color': colorValue})
 			}
 	</script>
 	<style type="text/css">
