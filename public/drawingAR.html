@@ -129,6 +129,11 @@
         console.log('this is your data', database)
         socket.emit('sendingDrawing', database)
       }
+
+      socket.on('toAr2', function(data) {
+        location.href = "https://stackproject.herokuapp.com/ar2"
+        console.log(data)
+    })
   </script>
 
 </body>
