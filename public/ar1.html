@@ -42,25 +42,26 @@
       <a-asset-item id="pokeball-material" src="pokeball-vray.mtl"></a-asset-item>
     </a-assets>
 
-<!--     <a-obj-model
+    <a-obj-model
       src="#ducky-obj"
       position="0 1200 -3000"
       rotation="-210 -120 180"
       scale="8 8 8"
       material="color: orange">
-    </a-obj-model> -->
-<!-- 
+      <a-animation attribute="rotation" begin="click" repeat="indefinite" to="0 360 0"></a-animation>
+    </a-obj-model>
+
     <a-obj-model
       src="#pokeball"
       mtl="#pokeball-material"
       position="1000 1200 -3000">
       <a-animation attribute="rotation" begin="click" repeat="indefinite" to="0 360 0"></a-animation>
-    </a-obj-model> -->
+    </a-obj-model>
   
-<!--     <a-box color="red" width="1000" height="1000" depth="1000"
+    <a-box color="red" width="1000" height="1000" depth="1000"
               position="-10000 1200 -3000" rotation="45 45 45" scale="1 2.5 1">
               <a-animation attribute="rotation" begin="click" repeat="indefinite" to="0 360 0"></a-animation>
-    </a-box> -->
+    </a-box>
     </a-entity>
   </a-scene>
 
