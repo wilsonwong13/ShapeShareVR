@@ -75,7 +75,7 @@
 		    	material:`color:${colorValue}; metalness:0.0; roughness:1.0;`,
 		    	message:"new Object"})
 				} else if  (shapeValue === 'box') {
-					socket.emit('newShape',{geometry: "primitive: box;",
+					socket.emit('newShape',{geometry: "primitive: box; width:1000; height: 1000; depth: 1000",
 		    	position:"0 1200 -3000",
 		    	material:`color:${colorValue}; metalness:0.0; roughness:1.0;`,
 		    	message:"new Object"})
