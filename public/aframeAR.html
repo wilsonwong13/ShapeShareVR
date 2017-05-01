@@ -19,6 +19,14 @@
       location.href = "https://stackproject.herokuapp.com/drawingAR"
       console.log(data)
     })
+
+     socket.on('newShapeAr2', function(data) {
+      console.log('this is your object',data)
+      let entity = document.createElement('a-entity');
+      entity.setAttribute("geometry", data.geometry);
+      entity.setAttribute("material", data.material);
+      document.querySelector('a-scene').appendChild(entity)
+    })
 	</script>
 </body>
 </html>

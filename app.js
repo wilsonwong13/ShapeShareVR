@@ -53,6 +53,10 @@ io.on('connection', function(socket) {
 		socket.broadcast.emit('goTodrawAr', data)
 	})
 
+	socket.on('sendingShapeAr2', function(data) {
+		socket.broadcast.emit('newShapeAr2', data)
+	})
+
 	socket.on('disconnect', function() {
 		console.log('A user disconnect')
 	})
