@@ -85,7 +85,7 @@
 		    	material:`color:${colorValue}; metalness:0.0; roughness:1.0;`,
 		    	message:"new Object"})
 				} else if (shapeValue === 'torus') {
-					socket.emit('newShape',{geometry: "primitive: torus; radius: 1000; radius-tubular:1000; arc: 1000;",
+					socket.emit('newShape',{geometry: "primitive: torus; radius: 1000; radius-tubular:10; arc: 100;",
 		    	position:"0 1200 -3000",
 		    	material:`color:${colorValue}; metalness:0.0; roughness:1.0;`,
 		    	message:"new Object"})
