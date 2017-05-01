@@ -96,7 +96,7 @@
 				entity.setAttribute("position", '0 2 -1.877')
 				document.querySelector('a-scene').appendChild(entity)
 
-				socket.emit('sendingShapeAr2', {geometry: `primitive: ${shapeValue};`, position: '0 0.5 0' material: `color: ${colorValue}; opacity: 0.5;`})
+				socket.emit('sendingShapeAr2', {geometry: `primitive: ${shapeValue};`, position: '0 0.5 0', material: `color: ${colorValue}; opacity: 0.5;`})
 			}
 	</script>
 	<style type="text/css">
