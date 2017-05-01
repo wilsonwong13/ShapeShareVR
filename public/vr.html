@@ -62,6 +62,14 @@
 			function drawAR() {
 				socket.emit("drawAr", "This is drawAr")
 			}
+
+			function receivedDataFromSelect() {
+				let dataShape = document.getElementById("shapeSelect")
+				let shapeValue = dataShape.options[dataShape.selectedIndex].value
+				let dataColor = document.getElementById("colorSelect")
+				let colorValue = dataShape.options[dataShape.selectedIndex].value
+				console.log('This is your value', {'shape': dataShape, 'color': colorValue})
+			}
 	</script>
 	<style type="text/css">
 		.aframebox {
@@ -77,6 +85,26 @@
 	<a-entity position="0 -1 0">
   	<a-camera></a-camera>
 	</a-entity>
+	<div>
+		<h3>Please Select a Shape</h3>
+			<p>Shape</p>
+			<select id="shapeSelect">
+			  <option value="box">Box</option>
+			  <option value="sphere">Sphere</option>
+			  <option value="cone">Cone</option>
+			  <option value="torus-knot">Torus-Knot</option>
+			</select>
+		<h3>Please Select a Color</h3>
+			<p>Color</p>
+			<select id="colorSelect">
+			  <option value="blue">Blue</option>
+			  <option value="red">Red</option>
+			  <option value="yellow">Yellow</option>
+			  <option value="green">Green</option>
+			</select>
+	</div>
+	<button type="button" onclick="">Send Object</button>
+	<button type="button" onclick="goToAr2()">Change to Mixed Reality 2 View</button>
 	<button type="button" onclick="test()">Howdy</button>
 	<button type="button" onclick="createBox()">Create a box</button>
 	<button type="button" onclick="goToAr2()">Ar2</button>
