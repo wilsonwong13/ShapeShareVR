@@ -10,6 +10,10 @@ app.get('/', function(req, res, next) {
 	res.sendFile(__dirname + '/public/index.html')
 });
 
+app.get('/testing', function(req, res, next ) {
+	res.sendFile(__dirname + '/public/testingFirebase.html')
+})
+
 app.get('/ar2', function(req, res, next) {
 	res.sendFile(__dirname + '/public/aframeAR.html')
 });

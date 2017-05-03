@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Testing A-Frame Multiplayer</title>
+	<script src="https://aframe.io/releases/0.3.0/aframe.min.js"></script> 
+	<script src="https://unpkg.com/aframe-firebase-component@^4.0.0/dist/aframe-firebase-component.min.js"></script>
+</head>
+<body>
+	<a-scene firebase="apiKey: AIzaSyCao3V8b2INzVjRy8ZzTsSXBP-z3gZSJiI; authDomain: testing-firebase-5f787.firebaseapp.com; 
+	databaseURL: https://testing-firebase-5f787.firebaseio.com;
+	 storageBucket: testing-firebase-5f787.appspot.com">
+	 	<a-assets>
+      <!-- Using mixins to decrease amount of data send over the wire. -->
+      <a-mixin id="avatar-head"
+              geometry="primitive: box; depth: 0.3; height: 0.3; width: 0.3"
+              material="color: #222"></a-mixin>
+    </a-assets>
+ 
+    <a-entity id="avatar" mixin="avatar-head"
+              camera look-controls wasd-controls
+              firebase-broadcast="components: mixin, position, rotation"
+              position="0 1.8 5">
+    </a-entity>
+	</a-scene>
+</body>
+</html>
