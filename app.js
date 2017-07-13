@@ -36,10 +36,10 @@ io.on('connection', function(socket) {
 	socket.on('personalTest', function(data) {
 		socket.broadcast.emit('newtext', data)
 	})
-	
+
 	socket.on('newShape', function(data) {
 		socket.broadcast.emit('newShape', data)
-	})	
+	})
 
 	socket.on('ar2', function(data) {
 		socket.broadcast.emit('toAr2', data)
@@ -62,3 +62,6 @@ io.on('connection', function(socket) {
 	})
 })
 
+app.listen(3000, function() {
+  console.log("Listening on port 3000")
+})
