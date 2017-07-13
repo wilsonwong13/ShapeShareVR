@@ -1,14 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Welcome to My App</title>
+	<title>ShapeShareVR</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
-<body>
-	<h3>Howdy!</h3>
-	<h2>Please select your viewing experience</h2>
-	<button id ="VR" onclick="location.href = 'https://stackproject.herokuapp.com/vr'" type="button">Virtual Reality Experience</button>
-	<button id ="Mixed-Reality" onclick="location.href = 'https://stackproject.herokuapp.com/ar1'" type="button">Augmented Reality Experience</button>
-	<a href = 'https://jeromeetienne.github.io/AR.js/data/images/HIRO.jpg'>Please print this marker for Augmented Reality 2 Experience</a>
-	<p>Please use magenta marker for drawing and green marker for erasing when using tracking.js</p>
+<body class="blue lighten-5">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+  <div class="container">
+    <div class="row">
+      <div class="col s12">
+        <h3 style="text-align: center;">Welcome to ShapeShareVR</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12" style="text-align: center;">
+        <h4>Please select your viewing experience</h4>
+        <a class="waves-effect waves-light btn blue darken-4" href="/vr">VR</a>
+        <a class="waves-effect waves-light btn blue darken-4" href="/ar1">Augmented Reality Experience</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12" style="text-align: center;">
+        <p>Please print this marker for Augmented Reality 2 Experience</p>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
+
+
+
+<!--   <h3>Howdy!</h3>
+  <h2>Please select your viewing experience</h2>
+  <button id ="VR" onclick="location.href = 'https://stackproject.herokuapp.com/vr'" type="button">Virtual Reality Experience</button>
+  <button id ="Mixed-Reality" onclick="location.href = 'https://stackproject.herokuapp.com/ar1'" type="button">Augmented Reality Experience</button>
+  <a href = 'https://jeromeetienne.github.io/AR.js/data/images/HIRO.jpg'>Please print this marker for Augmented Reality 2 Experience</a>
+  <p>Please use magenta marker for drawing and green marker for erasing when using tracking.js</p> -->
